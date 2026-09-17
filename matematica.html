@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Matemáticas a través del tiempo | Factorizando el mundo</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f4efe4;
+            color: #29251f;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           ENCABEZADO
+        ========================= */
+
+        .encabezado {
+            min-height: 360px;
+            background:
+                linear-gradient(rgba(25, 20, 15, .72), rgba(25, 20, 15, .72)),
+                linear-gradient(135deg, #6b4f2a, #b88645);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+        }
+
+        .encabezado-contenido {
+            max-width: 900px;
+        }
+
+        .etiqueta {
+            display: inline-block;
+            padding: 8px 18px;
+            border: 1px solid rgba(255,255,255,.5);
+            border-radius: 30px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .encabezado h1 {
+            font-size: clamp(40px, 7vw, 75px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .encabezado h2 {
+            font-size: clamp(20px, 3vw, 32px);
+            font-weight: 400;
+        }
+
+        .profesor {
+            margin-top: 25px;
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           NAVEGACIÓN
+        ========================= */
+
+        .menu {
+            background: #28231d;
+            padding: 15px 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            padding: 9px 15px;
+            border-radius: 20px;
+            transition: .3s;
+            font-size: 14px;
+        }
+
+        .menu a:hover {
+            background: #b88645;
+        }
+
+
+        /* =========================
+           CONTENEDOR
+        ========================= */
+
+        .contenedor {
+            width: min(1200px, 92%);
+            margin: auto;
+            padding: 70px 0;
+        }
+
+        .titulo-seccion {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .titulo-seccion h2 {
+            font-size: clamp(30px, 5vw, 45px);
+            color: #5b4024;
+            margin-bottom: 10px;
+        }
+
+        .titulo-seccion p {
+            max-width: 750px;
+            margin: auto;
+            color: #6b6258;
+        }
+
+
+        /* =========================
+           INTRODUCCIÓN
+        ========================= */
+
+        .introduccion {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+
+            display: flex;
+            align-items: center;
+            gap: 35px;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,.08);
+        }
+
+        .introduccion-icono {
+            min-width: 100px;
+            height: 100px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: #ead8b7;
+            border-radius: 50%;
+            font-size: 50px;
+        }
+
+        .introduccion-texto {
+            flex: 1;
+        }
+
+        .introduccion-texto h3 {
+            color: #704b27;
+            margin-bottom: 10px;
+            font-size: 25px;
+        }
+
+
+        /* =========================
+           CIVILIZACIONES
+        ========================= */
+
+        .casos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+        }
+
+        .caso {
+            flex: 1 1 500px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,.08);
+            transition: .3s;
+        }
+
+        .caso:hover {
+            transform: translateY(-7px);
+        }
+
+        .caso-header {
+            min-height: 170px;
+            padding: 30px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            color: white;
+        }
+
+        .grecia {
+            background: linear-gradient(135deg, #315c7c, #6da2c4);
+        }
+
+        .mesopotamia {
+            background: linear-gradient(135deg, #79552d, #b88345);
+        }
+
+        .india {
+            background: linear-gradient(135deg, #7c3f66, #bd739e);
+        }
+
+        .egipto {
+            background: linear-gradient(135deg, #9c721c, #d8b14e);
+        }
+
+        .civilizacion {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: .9;
+        }
+
+        .caso-header h3 {
+            font-size: 30px;
+            margin-top: 5px;
+        }
+
+        .caso-contenido {
+            padding: 30px;
+        }
+
+        .formula {
+            background: #f3eee5;
+            padding: 18px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 22px;
+            font-weight: bold;
+            color: #52391f;
+            overflow-x: auto;
+        }
+
+
+        /* =========================
+           EJEMPLOS
+        ========================= */
+
+        .ejemplos {
+            margin-top: 25px;
+        }
+
+        .ejemplo {
+            border-left: 5px solid #b88645;
+            background: #faf8f3;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .ejemplo strong {
+            color: #68451f;
+        }
+
+
+        /* =========================
+           VIDA REAL
+        ========================= */
+
+        .vida-real {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .situacion {
+            flex: 1 1 300px;
+            background: white;
+            padding: 28px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0,0,0,.07);
+        }
+
+        .situacion span {
+            font-size: 35px;
+        }
+
+        .situacion h3 {
+            color: #704b27;
+            margin: 10px 0;
+        }
+
+
+        /* =========================
+           RETO
+        ========================= */
+
+        .reto {
+            background: #28231d;
+            color: white;
+            border-radius: 25px;
+            padding: 45px;
+
+            display: flex;
+            flex-wrap: wrap;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .reto-texto {
+            flex: 1 1 500px;
+        }
+
+        .reto-texto h2 {
+            font-size: 35px;
+            color: #e1b86a;
+            margin-bottom: 15px;
+        }
+
+        .reto-ejercicio {
+            flex: 1 1 350px;
+            background: #3a332b;
+            padding: 30px;
+            border-radius: 18px;
+            text-align: center;
+        }
+
+        .reto-ejercicio .formula {
+            background: #f3eee5;
+        }
+
+
+        /* =========================
+           RESPUESTAS
+        ========================= */
+
+        .respuestas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .respuesta {
+            flex: 1 1 250px;
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            border-top: 5px solid #b88645;
+        }
+
+
+        /* =========================
+           CURIOSIDADES
+        ========================= */
+
+        .curiosidades {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .curiosidad {
+            flex: 1 1 300px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,.07);
+        }
+
+        .curiosidad-icono {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           AUDIO
+        ========================= */
+
+        .audio-seccion {
+            background: linear-gradient(135deg, #5c4329, #89663a);
+            color: white;
+            padding: 50px 30px;
+            border-radius: 25px;
+            text-align: center;
+        }
+
+        .audio-seccion h2 {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .audio-seccion p {
+            max-width: 700px;
+            margin: 0 auto 25px;
+        }
+
+        audio {
+            width: min(700px, 100%);
+        }
+
+
+        /* =========================
+           PIE
+        ========================= */
+
+        footer {
+            background: #28231d;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer h3 {
+            color: #e1b86a;
+            margin-bottom: 8px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .introduccion {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .encabezado {
+                min-height: 300px;
+            }
+
+            .reto {
+                padding: 30px 20px;
+            }
+
+            .caso-header h3 {
+                font-size: 25px;
+            }
+
+            .contenedor {
+                padding: 50px 0;
+            }
+
+            .menu {
+                position: static;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<!-- =========================================
+     ENCABEZADO
+========================================= -->
+
+<header class="encabezado">
+
+    <div class="encabezado-contenido">
+
+        <span class="etiqueta">
+            Sección de Matemática
+        </span>
+
+        <h1>
+            Matemáticas a través del tiempo
+        </h1>
+
+        <h2>
+            Factorizando el mundo
+        </h2>
+
+        <p class="profesor">
+            Estudiante: <strong>Alexa Carrillo</strong>
+        </p>
+
+        <p class="profesor">
+            Profesor: <strong>Noriel Ovalle</strong>
+        </p>
+    </div>
+
+</header>
+
+
+<!-- =========================================
+     MENÚ
+========================================= -->
+
+<nav class="menu">
+
+    <a href="#introduccion">Inicio</a>
+    <a href="#casos">Casos</a>
+    <a href="#vida-real">Vida real</a>
+    <a href="#reto">Reto</a>
+    <a href="#respuestas">Respuestas</a>
+    <a href="#curiosidades">Curiosidades</a>
+    <a href="#audio">Audio</a>
+
+</nav>
+
+
+<main>
+
+
+<!-- =========================================
+     INTRODUCCIÓN
+========================================= -->
+
+<section class="contenedor" id="introduccion">
+
+    <div class="titulo-seccion">
+
+        <h2>La factorización nos rodea</h2>
+
+        <p>
+            Una exploración matemática donde cuatro casos de factorización
+            se presentan a través de la ambientación de cuatro grandes
+            civilizaciones.
+        </p>
+
+    </div>
+
+
+    <div class="introduccion">
+
+        <div class="introduccion-icono">
+            ∑
+        </div>
+
+        <div class="introduccion-texto">
+
+            <h3>
+                ¿Qué es factorizar?
+            </h3>
+
+            <p>
+                Factorizar consiste en transformar una expresión algebraica
+                en un producto de factores más sencillos. Es una herramienta
+                fundamental para simplificar expresiones, resolver ecuaciones
+                y analizar diferentes situaciones matemáticas.
+            </p>
+
+            <br>
+
+            <p>
+                En esta sección aprenderemos cuatro casos de factorización
+                mediante ejemplos, retos y situaciones relacionadas con
+                nuestro mundo cotidiano.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CUATRO CASOS
+========================================= -->
+
+<section class="contenedor" id="casos">
+
+    <div class="titulo-seccion">
+
+        <h2>Los cuatro casos</h2>
+
+        <p>
+            Cada caso está ambientado en una civilización diferente.
+            La civilización funciona como elemento creativo de la presentación.
+        </p>
+
+    </div>
+
+
+    <div class="casos">
+
+
+        <!-- GRECIA -->
+
+        <article class="caso">
+
+            <div class="caso-header grecia">
+
+                <span class="civilizacion">
+                    🏛️ Civilización Griega
+                </span>
+
+                <h3>
+                    1. Factor común
+                </h3>
+
+            </div>
+
+
+            <div class="caso-contenido">
+
+                <p>
+                    Se utiliza cuando los términos de una expresión
+                    algebraica tienen uno o más factores en común.
+                </p>
+
+                <div class="formula">
+                    ax + ay = a(x + y)
+                </div>
+
+
+                <div class="ejemplos">
+
+                    <div class="ejemplo">
+
+                        <strong>Ejemplo:</strong>
+
+                        <p>
+                            6x + 12
+                        </p>
+
+                        <p>
+                            Factor común: 6
+                        </p>
+
+                        <p>
+                            <strong>
+                                6(x + 2)
+                            </strong>
+                        </p>
+
+                    </div>
+
+
+                    <div class="ejemplo">
+
+                        <strong>Otro ejemplo:</strong>
+
+                        <p>
+                            8x² + 4x
+                        </p>
+
+                        <p>
+                            Factor común: 4x
+                        </p>
+
+                        <p>
+                            <strong>
+                                4x(2x + 1)
+                            </strong>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- MESOPOTAMIA -->
+
+        <article class="caso">
+
+            <div class="caso-header mesopotamia">
+
+                <span class="civilizacion">
+                    🧱 Civilización Mesopotámica
+                </span>
+
+                <h3>
+                    2. Diferencia de cuadrados
+                </h3>
+
+            </div>
+
+
+            <div class="caso-contenido">
+
+                <p>
+                    Se presenta cuando tenemos dos términos que son cuadrados
+                    perfectos separados por una resta.
+                </p>
+
+                <div class="formula">
+                    a² − b² = (a + b)(a − b)
+                </div>
+
+
+                <div class="ejemplos">
+
+                    <div class="ejemplo">
+
+                        <strong>Ejemplo:</strong>
+
+                        <p>
+                            x² − 25
+                        </p>
+
+                        <p>
+                            x² − 5²
+                        </p>
+
+                        <p>
+                            <strong>
+                                (x + 5)(x − 5)
+                            </strong>
+                        </p>
+
+                    </div>
+
+
+                    <div class="ejemplo">
+
+                        <strong>Otro ejemplo:</strong>
+
+                        <p>
+                            9x² − 16
+                        </p>
+
+                        <p>
+                            (3x)² − 4²
+                        </p>
+
+                        <p>
+                            <strong>
+                                (3x + 4)(3x − 4)
+                            </strong>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- INDIA -->
+
+        <article class="caso">
+
+            <div class="caso-header india">
+
+                <span class="civilizacion">
+                    🪷 Civilización India
+                </span>
+
+                <h3>
+                    3. Trinomio cuadrado perfecto
+                </h3>
+
+            </div>
+
+
+            <div class="caso-contenido">
+
+                <p>
+                    Es un trinomio formado por el cuadrado del primer término,
+                    el doble producto de ambos términos y el cuadrado del
+                    segundo término.
+                </p>
+
+                <div class="formula">
+                    a² ± 2ab + b² = (a ± b)²
+                </div>
+
+
+                <div class="ejemplos">
+
+                    <div class="ejemplo">
+
+                        <strong>Ejemplo:</strong>
+
+                        <p>
+                            x² + 6x + 9
+                        </p>
+
+                        <p>
+                            x² + 2(x)(3) + 3²
+                        </p>
+
+                        <p>
+                            <strong>
+                                (x + 3)²
+                            </strong>
+                        </p>
+
+                    </div>
+
+
+                    <div class="ejemplo">
+
+                        <strong>Otro ejemplo:</strong>
+
+                        <p>
+                            x² − 10x + 25
+                        </p>
+
+                        <p>
+                            <strong>
+                                (x − 5)²
+                            </strong>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- EGIPTO -->
+
+        <article class="caso">
+
+            <div class="caso-header egipto">
+
+                <span class="civilizacion">
+                    🔺 Civilización Egipcia
+                </span>
+
+                <h3>
+                    4. Trinomio ax² + bx + c
+                </h3>
+
+            </div>
+
+
+            <div class="caso-contenido">
+
+                <p>
+                    Este caso aparece cuando el coeficiente del término
+                    cuadrático es diferente de 1.
+                </p>
+
+                <div class="formula">
+                    ax² + bx + c
+                </div>
+
+
+                <div class="ejemplos">
+
+                    <div class="ejemplo">
+
+                        <strong>Ejemplo:</strong>
+
+                        <p>
+                            2x² + 7x + 3
+                        </p>
+
+                        <p>
+                            Buscamos dos números cuyo producto sea:
+                            2 × 3 = 6
+                        </p>
+
+                        <p>
+                            y cuya suma sea 7.
+                        </p>
+
+                        <p>
+                            Los números son 6 y 1.
+                        </p>
+
+                        <p>
+                            2x² + 6x + x + 3
+                        </p>
+
+                        <p>
+                            2x(x + 3) + 1(x + 3)
+                        </p>
+
+                        <p>
+                            <strong>
+                                (2x + 1)(x + 3)
+                            </strong>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     VIDA REAL
+========================================= -->
+
+<section class="contenedor" id="vida-real">
+
+    <div class="titulo-seccion">
+
+        <h2>Factorización en la vida real</h2>
+
+        <p>
+            La factorización también puede ayudarnos a representar
+            y simplificar situaciones de nuestro entorno.
+        </p>
+
+    </div>
+
+
+    <div class="vida-real">
+
+
+        <article class="situacion">
+
+            <span>📐</span>
+
+            <h3>
+                1. Áreas
+            </h3>
+
+            <p>
+                En geometría podemos utilizar la factorización para
+                expresar el área de una figura rectangular como el producto
+                de sus dimensiones.
+            </p>
+
+        </article>
+
+
+        <article class="situacion">
+
+            <span>🏗️</span>
+
+            <h3>
+                2. Construcción
+            </h3>
+
+            <p>
+                Las expresiones algebraicas pueden representar dimensiones
+                y superficies utilizadas en diseños y construcciones.
+            </p>
+
+        </article>
+
+
+        <article class="situacion">
+
+            <span>💰</span>
+
+            <h3>
+                3. Economía
+            </h3>
+
+            <p>
+                La factorización permite simplificar expresiones utilizadas
+                para representar costos, cantidades y relaciones matemáticas.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     RETO MATEMÁTICO
+========================================= -->
+
+<section class="contenedor" id="reto">
+
+    <div class="reto">
+
+        <div class="reto-texto">
+
+            <h2>
+                🧩 Reto matemático
+            </h2>
+
+            <p>
+                Ahora es tu turno. Identifica el caso de factorización
+                correspondiente y encuentra la factorización correcta.
+            </p>
+
+            <br>
+
+            <p>
+                Recuerda observar cuidadosamente cada expresión antes
+                de comenzar.
+            </p>
+
+        </div>
+
+
+        <div class="reto-ejercicio">
+
+            <h3>
+                Reto 1
+            </h3>
+
+            <div class="formula">
+                12x² + 18x
+            </div>
+
+            <p>
+                ¿Cuál es su factorización?
+            </p>
+
+            <br>
+
+            <h3>
+                Reto 2
+            </h3>
+
+            <div class="formula">
+                x² − 49
+            </div>
+
+            <p>
+                ¿Cuál es su factorización?
+            </p>
+
+            <br>
+
+            <h3>
+                Reto 3
+            </h3>
+
+            <div class="formula">
+                x² + 8x + 16
+            </div>
+
+            <p>
+                ¿Cuál es su factorización?
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     RESPUESTAS
+========================================= -->
+
+<section class="contenedor" id="respuestas">
+
+    <div class="titulo-seccion">
+
+        <h2>✅ Respuestas</h2>
+
+        <p>
+            Comprueba tus resultados después de resolver los retos.
+        </p>
+
+    </div>
+
+
+    <div class="respuestas">
+
+
+        <div class="respuesta">
+
+            <h3>
+                Reto 1
+            </h3>
+
+            <p>
+                12x² + 18x
+            </p>
+
+            <p>
+                Factor común: 6x
+            </p>
+
+            <strong>
+                6x(2x + 3)
+            </strong>
+
+        </div>
+
+
+        <div class="respuesta">
+
+            <h3>
+                Reto 2
+            </h3>
+
+            <p>
+                x² − 49
+            </p>
+
+            <p>
+                Diferencia de cuadrados.
+            </p>
+
+            <strong>
+                (x + 7)(x − 7)
+            </strong>
+
+        </div>
+
+
+        <div class="respuesta">
+
+            <h3>
+                Reto 3
+            </h3>
+
+            <p>
+                x² + 8x + 16
+            </p>
+
+            <p>
+                Trinomio cuadrado perfecto.
+            </p>
+
+            <strong>
+                (x + 4)²
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CURIOSIDADES
+========================================= -->
+
+<section class="contenedor" id="curiosidades">
+
+    <div class="titulo-seccion">
+
+        <h2>💡 Curiosidades matemáticas</h2>
+
+        <p>
+            Algunos datos interesantes relacionados con la factorización.
+        </p>
+
+    </div>
+
+
+    <div class="curiosidades">
+
+
+        <article class="curiosidad">
+
+            <div class="curiosidad-icono">
+                🔢
+            </div>
+
+            <h3>
+                Los números tienen factores
+            </h3>
+
+            <p>
+                Factorizar números significa expresarlos como un producto
+                de números más pequeños. Por ejemplo, 12 puede escribirse
+                como 3 × 4.
+            </p>
+
+        </article>
+
+
+        <article class="curiosidad">
+
+            <div class="curiosidad-icono">
+                🧠
+            </div>
+
+            <h3>
+                Factorizar simplifica
+            </h3>
+
+            <p>
+                Una expresión factorizada puede ser mucho más fácil de
+                analizar y utilizar para resolver problemas algebraicos.
+            </p>
+
+        </article>
+
+
+        <article class="curiosidad">
+
+            <div class="curiosidad-icono">
+                📜
+            </div>
+
+            <h3>
+                Matemática a través del tiempo
+            </h3>
+
+            <p>
+                Las matemáticas se han desarrollado durante miles de años
+                mediante aportes de diferentes culturas y civilizaciones.
+            </p>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     AUDIO
+========================================= -->
+
+<section class="contenedor" id="audio">
+
+    <div class="audio-seccion">
+
+        <h2>
+            🎙️ Escucha nuestra explicación
+        </h2>
+
+        <p>
+            En este espacio se incorporará un audio con la voz del estudiante
+            explicando un ejemplo de factorización, un procedimiento o una
+            curiosidad matemática.
+        </p>
+
+
+        <!--
+            CAMBIA "audio-factorizacion.mp3"
+            POR EL NOMBRE DE TU ARCHIVO DE AUDIO.
+        -->
+
+        <audio controls>
+
+            <source
+                src="explicativo.m4a"
+                type="audio/mpeg"
+            >
+
+            Tu navegador no puede reproducir este audio.
+
+        </audio>
+
+        <p style="margin-top: 15px; font-size: 14px;">
+            🎧 Audio: explicación de un caso de factorización
+        </p>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    <h3>
+        Matemáticas a través del tiempo
+    </h3>
+
+    <p>
+        Factorizando el mundo, &copy 2026. Todos los derechos reservados.
+    </p>
+</footer>
+
+
+</body>
+</html>
