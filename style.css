@@ -332,6 +332,12 @@ a {
   font: 700 clamp(1.4rem, 5vw, 2rem)/1.05 'Playfair Display', serif;
   width: 95%;
 }
+.article h3 {
+  font: 400 clamp(0.8rem, 5vw, 1rem)/1.05 'Playfair Display', serif;
+  width: 95%;
+  color: var(--cyan);
+  font-style: oblique;
+}
 
 .article p {
   width: 95%;
@@ -387,34 +393,6 @@ a {
   }
 
 }
-
-.thinkers {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-  margin: 20px 0;
-}
-
-.thinker {
-  padding: 20px;
-  border: 1px solid #ffffff1a;
-  background: #ffffff08
-}
-
-.thinker .number {
-  color: var(--cyan);
-  font-weight: 700
-}
-
-.thinker h3 {
-  font: 700 1.8rem 'Playfair Display', serif;
-  margin: 20px 0 8px
-}
-
-.thinker p {
-  font-size: .92rem
-}
-
 .timeline {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
