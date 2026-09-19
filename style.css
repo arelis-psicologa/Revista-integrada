@@ -75,6 +75,8 @@ a {
 .navbar .logo {
   width: 160px;
   margin: 5px 0;
+  border-radius: 10px;
+  box-shadow: 0 0 20px var(--violet);
 }
 
 .menu-btn {
@@ -398,44 +400,6 @@ padding-left: 10px;
 
 }
 
-.timeline {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: #ffffff18;
-  margin: 10px 0;
-}
-
-.timeline div {
-  background: var(--ink);
-  padding: 25px
-}
-
-.timeline b {
-  display: block;
-  color: var(--orange);
-  font-size: 1.7rem
-}
-
-.timeline span {
-  font-size: .9rem;
-  color: #cdd0dc
-}
-
-.science-card {
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(145deg, #302061, #182e4a);
-  padding-left: 20px;
-
-}
-
-.science-card .atom {
-  font-size: 4rem;
-  color: var(--cyan);
-}
-
-
 .impact-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -576,12 +540,6 @@ footer a {
   }
   .nav-links {
     display: none;
-    position: absolute;
-    top: 20px;
-    background: var(--ink);
-    flex-direction: column;
-    width: 99%;
-    margin: 0 auto;
   }
 
   .nav-links a {
@@ -593,19 +551,24 @@ footer a {
   }
 
   .nav-links.open {
-    display: flex;
-    margin-top: 12px;
-    margin-right: -12px;
+    position: absolute;
+    top: 15px;
+    right: 25px;
     padding: 5px 10px;
     border: 1px solid var(--line);
+    background: var(--ink);
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    border-radius: 5px;
   }
 
   .menu-btn {
     display: block;
+    cursor: pointer;
   }
 
-  .cover-card,
-  .split {
+  .cover-card{
     grid-template-columns: 1fr
   }
 
@@ -620,11 +583,6 @@ footer a {
   .sources {
     grid-template-columns: 1fr
   }
-
-  .timeline {
-    grid-template-columns: 1fr
-  }
-
   .index-grid {
     grid-template-columns: 1fr
   }
@@ -666,11 +624,11 @@ footer a {
 
 .logo-u {
   height: 100vh;
-  width: 95%;
+  width: 100%;
   object-fit: contain;
   position: absolute;
   z-index: -1;
-  opacity: 0.1;
+  opacity: 0.2;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
